@@ -7,6 +7,14 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <script>
+  const password = "portfolio123";
+  const input = prompt("パスワードを入力してください");
+
+  if (input !== password) {
+    document.body.innerHTML = "<h1>閲覧できません</h1>";
+  }
+  </script>
   <main class="page">
     <section class="profile">
       <div class="profile__head">
