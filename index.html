@@ -7,14 +7,29 @@
   <link rel="stylesheet" href="stylesheet.css" />
 </head>
 <body>
-  <script>
-  const password = "portfolio123";
-  const input = prompt("パスワードを入力してください");
+  <body style="display:none;">
+<script>
+  const password = "portfolio";
+  let input;
+  let message = "パスワードを入力してください";
 
-  if (input !== password) {
-    document.body.innerHTML = "<h1>閲覧できません</h1>";
+  while (input !== password) {
+    input = prompt(message);
+
+    if (input === null) {
+      document.body.innerHTML = "";
+      break;
+    }
+
+    if (input !== password) {
+      message = "パスワードが違います。もう一度入力してください";
+    }
   }
-  </script>
+
+  if (input === password) {
+    document.body.style.display = "block";
+  }
+</script>
   <main class="page">
     <section class="profile">
       <div class="profile__head">
